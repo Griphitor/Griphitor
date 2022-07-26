@@ -1,0 +1,47 @@
+{
+  "name": "griphitor",
+  "productName": "griphitor",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
+  },
+  "keywords": [],
+  "author": {
+    "name": "Griphcode",
+    "email": "Griphcode@protonmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "griphitor"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
